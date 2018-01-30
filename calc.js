@@ -10,17 +10,17 @@ var justPressed = 0;
 var displayOut = $('#display');
 
 
-function doMath(equationLeft, equationRight, operator) {
+function doMath(equationLeft, equationRight, operand) {
     if (operand == "addButton") {
         display = parseInt(equationLeft) + parseInt(equationRight);
     }
-    if (operator == "subtractButton") { 
+    if (operand == "subtractButton") { 
         display = parseInt(equationLeft) - parseInt(equationRight);
     }
-    if (operator == "multiplyButton") { 
+    if (operand == "multiplyButton") { 
         display = parseInt(equationLeft) * parseInt(equationRight);
     }
-    if (operator == "divideButton") { 
+    if (operand == "divideButton") { 
         display = parseInt(equationLeft) / parseInt(equationRight);
     }
     return display;
@@ -39,7 +39,7 @@ $("[id^=button]").click(function(){ //Equivalent of a wild card here. Saying any
         equationRight = equationRight + thisValue;
         display = equationRight;
     }        
-    else if (!isNaN(equationLeft) && operand != null) { // Indicates operator set but not 2nd operand. - Pushing 2nd operand here
+    else if (!isNaN(equationLeft) && operand != null) { // Indicates operand set but not 2nd operand. - Pushing 2nd operand here
         equationRight = thisValue;
         display = equationRight;
     }
